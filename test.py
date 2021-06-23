@@ -1,21 +1,21 @@
 import unittest
-from cipher import Cipher
+from cipher import Caesar
+
 
 class TestCipher(unittest.TestCase):
-
     def test_caesar_no_overflow(self):
         text = 'abcd'
         n = 2
         correct = 'cdef'
 
-        result = Cipher.caesar(text, n)
+        result = Caesar.caesar(text, n)
         self.assertEqual(correct, result)
 
     def test_caesar_overflow(self):
         text = 'abcd'
         n = 25
 
-        result = Cipher.caesar(text, n)
+        result = Caesar.caesar(text, n)
 
 
 if __name__ == '__main__':
